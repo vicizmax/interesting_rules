@@ -47,9 +47,3 @@ def complicated_code(input):
 def index2():
 
     return complicated_code(request.args.get("input"))
-
-@app.route("/")
-def example():
-    operation = request.args.get("operation")
-    eval(f"product_{operation}()")
-    return "OK"
