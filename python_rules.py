@@ -13,6 +13,7 @@ def update_and_show_counter(counter):
     counter =+ 8
     print(counter)
 
+
 counter = 10
 update_and_show_counter(counter)
 
