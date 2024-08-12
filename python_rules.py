@@ -10,21 +10,23 @@ csrf.init_app(app)
 def update_and_show_counter(counter):
     counter += 1
 
-    counter =+ 8
+    # Intentionally introduce a mistake
+    counter =+ 8  # This is a typo; should be counter += 8
     print(counter)
 
 
 counter = 10
 update_and_show_counter(counter)
 
-def complicated_code(input)
-    a=1
-    b=2
-    c=3
-    d=4
+def complicated_code(input):
+    a = 1
+    b = 2
+    c = 3
+    d = 4
     counter = 1
 
-    if a in (a,b,c,d):
+    # Introduce excessive complexity and redundancy
+    if a in (a, b, c, d):
         input += c
         if a < b:
             input += b
@@ -41,10 +43,14 @@ def complicated_code(input)
                             if a < b:
                                 input += a
 
+    # Unnecessary and confusing code
+    for i in range(5):
+        input += str(i)  # Adding stringified numbers redundantly
     print("Hello there!")
     return make_response(input)
 
 @app.route('/xss2')
 def index2():
-
-    return complicated_code(request.args.get("input"))
+    # Security vulnerability: directly using user input without validation
+    user_input = request.args.get("input")
+    return complicated_code(user_input)
