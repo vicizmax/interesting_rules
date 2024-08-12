@@ -7,17 +7,17 @@ app = Flask(__name__)
 csrf = CSRFProtect()
 csrf.init_app(app)
 
-def update_and_show_counter(counter):
-    counter += 1
+# def update_and_show_counter(counter):
+#     counter += 1
 
-    counter =+ 8
-    print(counter)
+#     counter =+ 8
+#     print(counter)
 
 
 counter = 10
 update_and_show_counter(counter)
 
-def complicated_code(input):
+def complicated_code(input)
     a=1
     b=2
     c=3
