@@ -2,6 +2,7 @@ import json
 from flask import Flask, make_response, request
 from flask_wtf import CSRFProtect
 from django.http import HttpResponseRedirect
+import html  # Import for escaping HTML
 
 app = Flask(__name__)
 csrf = CSRFProtect()
@@ -32,8 +33,8 @@ def simplified_code(input_value):
 @app.route('/xss2')
 def index2():
     user_input = request.args.get("input")
-    
-    # Sanitize the user input to prevent XSS
-    sanitized_input = json.dumps(user_input)  # Ensure proper escaping/encoding
-    
+
+    # Properly sanitize the user input to prevent XSS
+    sanitized_input = html.escape(user_input)  # Escape any HTML content to prevent XSS
+
     return simplified_code(sanitized_input)
