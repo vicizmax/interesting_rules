@@ -38,3 +38,6 @@ def index2():
     sanitized_input = html.escape(user_input)  # Escape any HTML content to prevent XSS
 
     return simplified_code(sanitized_input)
+
+# OK lets try to trigger a gate
+# Let's do one more
