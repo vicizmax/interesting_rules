@@ -18,3 +18,4 @@ return 1;
 
 
 ?>
+// Demo: retrigger analysis (no functional change)
